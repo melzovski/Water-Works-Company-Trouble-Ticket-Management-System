@@ -1,0 +1,65 @@
+﻿@page
+@model Ceng396.Pages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin List Ticket</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+    <div class="card mb-25 pb-25 shadow-lg p-3 mb-5 bg-white rounded">
+        <div>
+            <h4>Subscriber Details</h4>
+            <hr />
+            <div class="container bg-dark mt-5 pb-5">
+                <dl class="row">
+                    <dt class="col-sm-2 text-white">
+                        @Html.DisplayNameFor(model => model.Subscriber.SubName)
+                    </dt>
+                    <dd class="col-sm-10 text-white">
+                        @Html.DisplayFor(model => model.Subscriber.SubName)
+                    </dd>
+                    <dt class="col-sm-2 text-white">
+                        @Html.DisplayNameFor(model => model.Subscriber.SubSurname)
+                    </dt>
+                    <dd class="col-sm-10 text-white">
+                        @Html.DisplayFor(model => model.Subscriber.SubSurname)
+                    </dd>
+                    <dt class="col-sm-2 text-white">
+                        @Html.DisplayNameFor(model => model.Subscriber.SubPassword)
+                    </dt>
+                    <dd class="col-sm-10 text-white">
+                        @Html.DisplayFor(model => model.Subscriber.SubPassword)
+                    </dd>
+                    <dt class="col-sm-2 text-white">
+                        @Html.DisplayNameFor(model => model.Subscriber.SubAddress)
+                    </dt>
+                    <dd class="col-sm-10 text-white">
+                        @Html.DisplayFor(model => model.Subscriber.SubAddress)
+                    </dd>
+                    <dt class="col-sm-2 text-white">
+                        @Html.DisplayNameFor(model => model.Subscriber.SubEmail)
+                    </dt>
+                    <dd class="col-sm-10 text-white">
+                        @Html.DisplayFor(model => model.Subscriber.SubEmail)
+                    </dd>
+                </dl>
+
+                <div>
+                    <a class="btn btn-danger" asp-page="./Edit" asp-route-id="@Model.Subscriber.SubId">Edit</a> |
+                    <a class="btn btn-danger" asp-page="./Admin_Edit_DB">Back to List</a>
+                </div>
+            </div>
+        </div>
+     </div>
+</body>
+</html>

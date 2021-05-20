@@ -1,0 +1,57 @@
+﻿@page
+@model Ceng396.Pages.Sub_Explain_TicketModel
+@{
+    ViewData["Title"] = "Explain Your Ticket";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body style="background-color:white;">
+    <div class="card mb-25 pb-25 shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="container bg-dark mt-5 pb-5">
+            <h3 class="text-white">Welcome @Model.Username</h3>
+            <hr />
+            <div class="container pb-5 mt-5">
+                <table class="table table-dark">
+                    <form id="frm1" method="post">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="form-group">
+                                        <label class="control-label">Explain Your Ticket:</label>
+                                        <input class="form-control" type="text" id="explain"
+                                               name="explain">
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="form-group">
+                                        <button class="btn btn-danger" asp-page-handler="Register">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                    </form>
+                    <thead>
+                        <tr>
+                            <th>
+                                <div>
+                                    <a  class="btn btn-danger" asp-page="./Sub_Welcome">Go Back</a>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

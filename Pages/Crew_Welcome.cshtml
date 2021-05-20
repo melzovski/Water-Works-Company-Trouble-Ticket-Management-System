@@ -1,0 +1,56 @@
+﻿@page
+@model Ceng396.Pages.Crew_WelcomeModel
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Welcome</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="card mb-25 pb-25 shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="container bg-dark mt-5 pb-5">
+            <div class="container pb-5 mt-5">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th>
+                                <h3>Welcome Crew NO : @Model.Username</h3>
+                            </th>
+                        </tr>
+                    <thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <li>
+                                    <a class="text-white" asp-area="" asp-page="/Crew_Check_Job">Check your job Here.</a>
+                                </li>
+                            </th>
+                        </tr>
+                    <thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <li>
+                                    <a class="text-white" asp-area="" asp-page="/Crew_Job_Done">Report your job done here.</a>
+                                </li>
+                            </th>
+                        </tr>
+                    <thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                <a class="btn btn-danger" asp-page="Index" asp-page-handler="Logout">Logout</a>
+                            </th>
+                        </tr>
+                    <thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

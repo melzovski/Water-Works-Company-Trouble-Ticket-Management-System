@@ -1,0 +1,72 @@
+﻿@page
+@model Ceng396.Pages.TicketEditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin List Ticket</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+    <div class="card mb-25 pb-25 shadow-lg p-3 mb-5 bg-white rounded">
+        <h4>Ticket Edit</h4>
+        <hr />
+        <div class="container bg-dark mt-5 pb-5">
+            <div class="container pb-5 mt-5">
+                <div class="row">
+                    <div class="col-md-4">
+                        <form method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Ticket.TicketId" />
+                            <div class="form-group">
+                                <label asp-for="Ticket.TicketId" class="control-label text-white"></label>
+                                <input asp-for="Ticket.TicketId" class="form-control" />
+                                <span asp-validation-for="Ticket.TicketId" class="text-white"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Ticket.TicketMessage" class="control-label text-white"></label>
+                                <input asp-for="Ticket.TicketMessage" class="form-control" />
+                                <span asp-validation-for="Ticket.TicketMessage" class="text-white"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Ticket.TicketDone" class="control-label text-white"></label>
+                                <input asp-for="Ticket.TicketDone" class="form-control" />
+                                <span asp-validation-for="Ticket.TicketDone" class="text-white"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Ticket.SubId" class="control-label text-white"></label>
+                                <input asp-for="Ticket.SubId" class="form-control" />
+                                <span asp-validation-for="Ticket.SubId" class="text-white"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Ticket.CrewId" class="control-label text-white"></label>
+                                <select asp-for="Ticket.CrewId" class="form-control" asp-items="ViewBag.CrewId"></select>
+                                <span asp-validation-for="Ticket.CrewId" class="text-white"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Save"   class="btn btn-danger" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div>
+                    <a  class="btn btn-danger" asp-page="./Admin_Assign_Crew">Back to List</a>
+                </div>
+
+                @section Scripts {
+                    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+﻿@page
+@model Ceng396.Pages.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin List Ticket</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+    <div class="card mb-25 pb-25 shadow-lg p-3 mb-5 bg-white rounded">
+
+        <h4>Subscriber Edit</h4>
+        <hr />
+        <div class="container bg-dark mt-5 pb-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Subscriber.SubId" />
+                        <div class="form-group">
+                            <label asp-for="Subscriber.SubName" class="control-label text-white"></label>
+                            <input asp-for="Subscriber.SubName" class="form-control" />
+                            <span asp-validation-for="Subscriber.SubName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Subscriber.SubSurname" class="control-label text-white"></label>
+                            <input asp-for="Subscriber.SubSurname" class="form-control" />
+                            <span asp-validation-for="Subscriber.SubSurname" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Subscriber.SubPassword" class="control-label text-white"></label>
+                            <input asp-for="Subscriber.SubPassword" class="form-control" />
+                            <span asp-validation-for="Subscriber.SubPassword" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Subscriber.SubAddress" class="control-label text-white"></label>
+                            <input asp-for="Subscriber.SubAddress" class="form-control" />
+                            <span asp-validation-for="Subscriber.SubAddress" class="btn"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Subscriber.SubEmail" class="control-label text-white"></label>
+                            <input asp-for="Subscriber.SubEmail" class="form-control" />
+                            <span asp-validation-for="Subscriber.SubEmail" class="btn"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-danger" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <a class="btn btn-danger" asp-page="./Admin_Edit_DB">Back to List</a>
+            </div>
+
+            @section Scripts {
+                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+            }
+        </div>
+    </div>
+</body>
+</html>

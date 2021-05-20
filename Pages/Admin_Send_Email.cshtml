@@ -1,0 +1,102 @@
+﻿@page
+@model Ceng396.Pages.Admin_Send_EmailModel
+@{
+    ViewData["Title"] = "Admin_Send_Email";
+    Layout = "~/Pages/Shared/_Layout_Crew.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin List Ticket</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+    <div class="card mb-25 pb-25 shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="container bg-dark mt-5 pb-5">
+            <div class="container pb-5 mt-5">
+                <table class="table table table-dark">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.subscribers[0].SubId)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.subscribers[0].SubName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.subscribers[0].SubSurname)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.subscribers[0].SubPassword)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.subscribers[0].SubAddress)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.subscribers[0].SubEmail)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.subscribers)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SubId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SubName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SubSurname)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SubPassword)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SubAddress)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SubEmail)
+                                </td>
+                                <td>
+
+                                    <a onclick="" class="btn btn-danger" asp-page="Index" asp-page-handler="Logout">Send Email</a>
+
+
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="form-group">
+                <label class="control-label" for="person">
+                    Select
+                </label>
+                <select class="form-control" id="number" name="number">
+                    <option value="100">1</option>
+                    <option value="102">2</option>
+                    <option value="103">3</option>
+                </select>
+                <div class="form-group">
+                    <button class="btn-success" asp-page-handler="Register">
+                        Send Email
+                    </button>
+                </div>
+
+
+                <div>
+                    <a class="btn btn-danger" asp-page="./Admin_Welcome">Go Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

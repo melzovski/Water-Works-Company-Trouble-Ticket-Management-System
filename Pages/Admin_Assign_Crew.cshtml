@@ -1,0 +1,126 @@
+﻿@page
+@model Ceng396.Pages.Admin_Assign_CrewModel
+
+@{
+    ViewData["Title"] = "Admin Assign Crews";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin List Ticket</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+    <div class="card mb-25 pb-25 shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="container bg-dark mt-5 pb-5">
+            <div class="container pb-5 mt-5">
+                <table class="table table table-dark">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.tickets[0].TicketId)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.tickets[0].TicketMessage)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.tickets[0].TicketDone)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.tickets[0].CrewId)
+                            </th>
+
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+                        @for (int i = 0; i < Model.tickets.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => Model.tickets[i].TicketId)
+                                    @*<a asp-page="./Crew_Edit" asp-route-id="@item.TicketId">Edit</a>*@
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => Model.tickets[i].TicketMessage)
+                                    @*   <a asp-page="./Crew_Edit" asp-route-id="@item.TicketMessage">Edit</a>*@
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => Model.tickets[i].TicketDone)
+                                    @*   <a asp-page="./Crew_Edit" asp-route-id="@item.TicketDone">Edit</a>*@
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => Model.tickets[i].CrewId)
+                                    <a asp-page="./Ticket_Edit" asp-route-id="@Model.tickets[i].TicketId"   class="btn btn-danger">Edit</a>
+                                </td>
+
+
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <br /><br /><br />
+    <div class="card mb-25 pb-25 shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="container bg-dark mt-5 pb-5">
+            <div class="container pb-5 mt-5">
+                <table class="table table table-dark">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.crew[1].CrewId)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.crew[1].CrewPassword)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.crew[1].CrewAvailability)
+                            </th>
+
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @for (int i = 1; i < Model.crew.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => Model.crew[i].CrewId)
+
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => Model.crew[i].CrewPassword)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => Model.crew[i].CrewAvailability)
+                                    <a asp-page="./Crew_Edit" asp-route-id="@Model.crew[i].CrewId" class="btn btn-danger">Edit</a>
+                                </td>
+
+
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+                <div>
+                    <a class="btn btn-danger" asp-page="./Admin_Welcome">Go Back</a>
+                </div>
+            </div>
+           
+            
+        </div>
+    </div>
+</body>
+</html>

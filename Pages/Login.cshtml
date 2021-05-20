@@ -1,0 +1,61 @@
+﻿@page
+@model Ceng396.Pages.LoginModel
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="card mb-25 pb-25 shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="container bg-dark mt-5 pb-5">
+            <h3 class="text-white">Water Works Company Login Page</h3>
+            <hr />
+            <h3 class="text-white">@Model.Msg</h3>
+
+            <form method="post" asp-page="login">
+                <div class="container pb-5 mt-5">
+
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Username <input type="text" name="username" />
+                                </th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Password
+                                    <input type="password" name="password" />
+                                </th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input  class="btn btn-danger" type="submit" value="Login" />
+                                </th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <a  class="btn btn-danger" asp-page="./Index">Go Back</a>
+                                </th>
+                            </tr>
+                        </thead>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

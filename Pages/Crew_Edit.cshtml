@@ -1,0 +1,56 @@
+﻿@page
+@model Ceng396.Pages.CrewEditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout_Crew.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Welcome</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="card mb-25 pb-25 shadow-lg p-3 mb-5 bg-white rounded">
+        <h4>Crew Edit</h4>
+        <hr />
+        <div class="container bg-dark mt-5 pb-5">
+            <div class="container pb-5 mt-5">
+                <div class="row">
+                    <div class="col-md-4">
+                        <form method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Crew.CrewId" />
+                            <div class="form-group">
+                                <label asp-for="Crew.CrewPassword" class="control-label text-white"></label>
+                                <input asp-for="Crew.CrewPassword" class="form-control" />
+                                <span asp-validation-for="Crew.CrewPassword" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Crew.CrewAvailability" class="control-label text-white"></label>
+                                <input asp-for="Crew.CrewAvailability" class="form-control" />
+                                <span asp-validation-for="Crew.CrewAvailability" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Save" class="btn btn-danger" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div>
+                    <a class="btn btn-danger" asp-page="./Admin_Assign_Crew">Back to List</a>
+                </div>
+
+                @section Scripts {
+                    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

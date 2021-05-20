@@ -1,0 +1,85 @@
+﻿@page
+@model Ceng396.Pages.Admin_Edit_DBModel
+
+@{
+    ViewData["Title"] = "Admin Edit DB";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin List Ticket</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+    <div class="card mb-25 pb-25 shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="container bg-dark mt-5 pb-5">
+            <div class="container pb-5 mt-5">
+                <table class="table table table-dark">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.subscribers[0].SubId)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.subscribers[0].SubName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.subscribers[0].SubSurname)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.subscribers[0].SubPassword)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.subscribers[0].SubAddress)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.subscribers[0].SubEmail)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.subscribers)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SubId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SubName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SubSurname)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SubPassword)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SubAddress)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SubEmail)
+                            </td>
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.SubId" class="btn btn-danger"> Edit</a> |
+                                <a asp-page="./Details" asp-route-id="@item.SubId" class="btn btn-danger">Details</a>
+
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+
+
+                <div>
+                    <a  class="btn btn-danger" asp-page="./Admin_Welcome">Go Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
